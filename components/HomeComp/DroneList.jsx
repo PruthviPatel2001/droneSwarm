@@ -1,9 +1,14 @@
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import React from "react";
 
-const DroneList = ({data}) => {
+const DroneList = ({ data, setSelectedDroneId }) => {
 
+
+  const handlePress =(id) =>{
+    console.log(id);
+    setSelectedDroneId(id)
+  }
 
   return (
     <ScrollView
@@ -17,10 +22,20 @@ const DroneList = ({data}) => {
         const { id, name } = val;
 
         return (
-          <View key={id} className="bg-[#F5F5F533] bg-opacity-20 p-4 ml-4 rounded-md">
-            <Text className="text-white text-base" style={{fontFamily:"RobotoRegular"}}>
+          <View
+            key={id}
+            className="bg-[#F5F5F533] bg-opacity-20 p-4 ml-4 rounded-md"
+          >
+            <TouchableOpacity
+             onPress={()=>handlePress(id)}
+            >
+              <Text
+                className="text-white text-base"
+                style={{ fontFamily: "RobotoBold" }}
+              >
                 {name}
-            </Text>
+              </Text>
+            </TouchableOpacity>
           </View>
         );
       })}

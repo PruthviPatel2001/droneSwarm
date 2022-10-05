@@ -4,6 +4,14 @@ const profile = require("../assets/icons/profile.png")
 const rightArrow = require("../assets/icons/right-arrow.png")
 const stream = require("../assets/icons/video-camera.png")
 const record = require("../assets/icons/record.png")
+const battery = require("../assets/icons/battery.png")
+const compass = require("../assets/icons/compass.png")
+const wallclock = require("../assets/icons/wall-clock.png")
+const stopwatch = require("../assets/icons/stopwatch.png")
+const storage = require("../assets/icons/server-storage.png")
+const internet = require("../assets/icons/internet.png")
+
+
 
 
 export default {
@@ -12,5 +20,11 @@ export default {
     profile,
     rightArrow,
     stream,
-    record
+    record,
+    battery,
+    compass,
+    wallclock,
+    stopwatch,
+    storage,
+    internet
 }

@@ -1,9 +1,13 @@
+import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
+import DroneDetails from "../components/HomeComp/DroneDetails";
 import DroneList from "../components/HomeComp/DroneList";
-import React from "react";
 
 const Home = () => {
+  const [SelectedDrone, setSelectedDrone] = useState();
+  const [SelectedDroneId, setSelectedDroneId] = useState(1);
+
   const drones = [
     {
       id: 1,
@@ -90,13 +94,21 @@ const Home = () => {
       connection_status: true,
     },
   ];
+
+  useEffect(() => {
+    const filterData = drones.find((val) => val.id === SelectedDroneId);
+
+    setSelectedDrone(filterData);
+  }, [SelectedDroneId]);
+
   return (
     <View className=" bg-[#17233B] flex-1">
       <SafeAreaView>
         <ScrollView
           contentContainerStyle={{
-            paddingBottom: 100,
+            paddingBottom: 20,
           }}
+          showsVerticalScrollIndicator={false}
         >
           <View className="flex justify-between flex-row p-4">
             <Text
@@ -115,15 +127,22 @@ const Home = () => {
               Hello Admin,
             </Text>
           </View>
-          
+
+          <Text
+            className="text-white text-base p-4"
+            style={{ fontFamily: "RobotoBlack" }}
+          >
+            Drones:
+          </Text>
+          <View>
+            <DroneList setSelectedDroneId={setSelectedDroneId} data={drones} />
             <Text
-              className="text-white text-base p-4"
+              className="text-white text-base mt-2 p-4 pb-0"
               style={{ fontFamily: "RobotoBlack" }}
             >
-              Drones:
+              Deatils of drone: {SelectedDroneId}
             </Text>
-          <View >
-            <DroneList data={drones} />
+            <DroneDetails data={SelectedDrone} />
           </View>
         </ScrollView>
       </SafeAreaView>
