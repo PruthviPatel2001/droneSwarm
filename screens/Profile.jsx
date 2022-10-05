@@ -5,8 +5,8 @@ import React from "react";
 const Profile = () => {
   return (
     <SafeAreaView>
-      <View>
-        <Text>Profile</Text>
+      <View className="flex justify-center items-center">
+        <Text className="text-red-500">Profile</Text>
       </View>
     </SafeAreaView>
   );

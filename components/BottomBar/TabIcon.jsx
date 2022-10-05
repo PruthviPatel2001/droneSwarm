@@ -7,7 +7,7 @@ const TabIcon = ({ focused, icon, label }) => {
 
 
   return (
-    <View className="flex justify-center items-center">
+    <View className="flex justify-center items-center ">
       <Image
         source={icon}
         resizeMode="contain"
@@ -21,6 +21,7 @@ const TabIcon = ({ focused, icon, label }) => {
         style={{
           color: focused ? "#17233B" : "#FFFFFF",
         }}
+        className="mt-1"
       >
         {label}
       </Text>
