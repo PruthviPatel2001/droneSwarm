@@ -4,6 +4,9 @@ const profile = require("../assets/icons/profile.png")
 const rightArrow = require("../assets/icons/right-arrow.png")
 const stream = require("../assets/icons/video-camera.png")
 const record = require("../assets/icons/record.png")
+const edit = require("../assets/icons/pencil.png")
+const toggle = require("../assets/icons/off-button.png")
+const logout = require("../assets/icons/logout.png")
 
 
 export default {
@@ -12,5 +15,8 @@ export default {
     profile,
     rightArrow,
     stream,
-    record
+    record,
+    edit,
+    toggle,
+    logout
 }
