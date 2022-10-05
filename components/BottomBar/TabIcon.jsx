@@ -5,7 +5,7 @@ import React from "react";
 
 const TabIcon = ({ focused, icon, label }) => {
 
-    console.log(icon)
+
   return (
     <View className="flex justify-center items-center">
       <Image

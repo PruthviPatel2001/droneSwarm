@@ -10,13 +10,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={"MainLayout"}
+        initialRouteName={"home "}
         screenOptions={{
           headerShown: false,
         }}
       >
         <Stack.Screen
-          name="MainLayout"
+          name="home"
           component={Tabs}
           options={{ gestureEnabled: false }}
         />

@@ -1,10 +1,16 @@
-import {ClipboardDocumentListIcon, HomeIcon, UserCircleIcon, VideoCameraIcon} from "react-native-heroicons/outline"
+import {
+  ClipboardDocumentListIcon,
+  UserCircleIcon,
+  VideoCameraIcon,
+} from "react-native-heroicons/outline";
 import { Home, Profile, Records, Stream } from "../screens";
 import { Text, View } from "react-native";
 
+import HomeIcon from "react-native-heroicons/outline/HomeIcon";
 import React from "react";
-import { TabIcon } from "../components/BottomBar/TabIcon";
+import TabIcon from "../components/BottomBar/TabIcon";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import icons from "../constants/icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +32,9 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <TabIcon focused={focused} icon={<HomeIcon/>} label="Home" />;
+            return (
+              <TabIcon focused={focused} icon={icons.home} label="Home" />
+            );
           },
         }}
       />
@@ -35,7 +43,7 @@ const Tabs = () => {
         component={Stream}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <TabIcon focused={focused} icon={<VideoCameraIcon/>} label="Stream" />;
+            return <TabIcon focused={focused} icon={icons.stream} label="Stream" />;
           },
         }}
       />
@@ -44,7 +52,7 @@ const Tabs = () => {
         component={Records}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <TabIcon focused={focused} icon={<ClipboardDocumentListIcon/>} label="Records" />;
+            return <TabIcon focused={focused} icon={icons.record} label="Records" />;
           },
         }}
       />
@@ -53,7 +61,7 @@ const Tabs = () => {
         component={Profile}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <TabIcon focused={focused} icon={<UserCircleIcon/>} label="Profile" />;
+            return <TabIcon focused={focused} icon={icons.profile} label="Profile" />;
           },
         }}
       />
