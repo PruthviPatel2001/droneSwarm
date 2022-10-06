@@ -1,4 +1,15 @@
-import {SafeAreaView, Text, View, StyleSheet, Platform, StatusBar, Dimensions, Image, Button} from "react-native";
+import {
+    SafeAreaView,
+    Text,
+    View,
+    StyleSheet,
+    Platform,
+    StatusBar,
+    Dimensions,
+    Image,
+    Button,
+    TextInput
+} from "react-native";
 
 import React from "react";
 import icons from "../constants/icons";
@@ -27,8 +38,11 @@ const Profile = () => {
             </View>
             <View className='mx-4 text-left mt-6'>
                 <Text className='text-sm text-gray-500'>Name</Text>
-                <View className='flex flex-row justify-between border-solid border-b-2 border-gray-200'>
-                    <Text className='text-xl'>Shubham Salunke</Text>
+                <View className='flex flex-row justify-center items-center w-full border-solid border-b-2 border-gray-200'>
+                    <TextInput
+                        className='flex flex-row w-full'
+                        value=''
+                    />
                     <Image
                         source={icons.edit}
                         style={{
@@ -41,8 +55,11 @@ const Profile = () => {
                 <Text className='text-sm text-gray-500 mt-4'>Email</Text>
                 <Text className='text-xl border-solid border-b-2 border-gray-200'>shubhamdeepak007@gmail.com</Text>
                 <Text className='text-sm text-gray-500 mt-4'>Date of Birth</Text>
-                <View className='flex flex-row justify-between border-solid border-b-2 border-gray-200'>
-                    <Text className='text-xl'>02.05.2001</Text>
+                <View className='flex flex-row justify-center items-center w-full border-solid border-b-2 border-gray-200'>
+                    <TextInput
+                        className='flex flex-row w-full'
+                        value=''
+                    />
                     <Image
                         source={icons.edit}
                         style={{
@@ -60,8 +77,8 @@ const Profile = () => {
                     <Image
                         source={icons.toggle}
                         style={{
-                            width: 30,
-                            height: 30,
+                            width: 35,
+                            height: 35,
                         }}
                         resizeMode='contain'
                     />
@@ -96,5 +113,5 @@ const styles = StyleSheet.create({
         marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
         height: Dimensions.get("screen").height,
         backgroundColor: '#ffffff'
-    }
+    },
 })
