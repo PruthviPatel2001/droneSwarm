@@ -9,8 +9,8 @@ const DroneDetails = ({ data }) => {
       <View className="p-5">
         <View className="col-span-2 bg-[#F5F5F533] bg-opacity-20 p-4 rounded-lg">
           <View className="flex justify-between items-center flex-row">
-            <Text className="text-white" style={{fontFamily:'RobotoBold'}}>{data.details.title}</Text>
-            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>3200 mAh</Text>
+            <Text className="text-white" style={{fontFamily:'RobotoBold'}}>{data?.details?.title}</Text>
+            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>{data?.details?.battery} mAh</Text>
           </View>
 
           <View className="flex flex-row mt-4">
@@ -23,7 +23,7 @@ const DroneDetails = ({ data }) => {
                 tintColor: "white",
               }}
             />
-            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>48% Battery</Text>
+            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>{data?.details?.batteryPerc}% Battery</Text>
           </View>
 
           <View className="flex flex-row mt-3">
@@ -36,7 +36,7 @@ const DroneDetails = ({ data }) => {
                 tintColor: "white",
               }}
             />
-            <Text className="text-white  ml-4" style={{fontFamily:'RobotoBold'}}>180m Range</Text>
+            <Text className="text-white  ml-4" style={{fontFamily:'RobotoBold'}}>{data?.details?.range}m Range</Text>
           </View>
 
           <View className="flex flex-row mt-3">
@@ -49,7 +49,7 @@ const DroneDetails = ({ data }) => {
                 tintColor: "white",
               }}
             />
-            <Text className="text-white  ml-4" style={{fontFamily:'RobotoBold'}}>20 Mins Flying Left</Text>
+            <Text className="text-white  ml-4" style={{fontFamily:'RobotoBold'}}>{data?.details?.flyingTimeLeft} Flying Left</Text>
           </View>
         </View>
       </View>
@@ -70,11 +70,11 @@ const DroneDetails = ({ data }) => {
           </View>
           <View className=" flex flex-row mt-2">
             <Text className="text-white w-12 " style={{fontFamily:'RobotoBold'}}>VQ</Text>
-            <Text className="text-white ml-5 " style={{fontFamily:'RobotoBold'}}>1080p</Text>
+            <Text className="text-white ml-5 " style={{fontFamily:'RobotoBold'}}>{data?.camera_details?.vq}</Text>
           </View>
           <View className=" flex flex-row mt-1">
             <Text className="text-white w-12 " style={{fontFamily:'RobotoBold'}}>RES</Text>
-            <Text className="text-white ml-5 " style={{fontFamily:'RobotoBold'}}> 1090 X 1080</Text>
+            <Text className="text-white ml-5 " style={{fontFamily:'RobotoBold'}}> {data?.camera_details?.res}</Text>
           </View>
         </View>
 
@@ -93,11 +93,11 @@ const DroneDetails = ({ data }) => {
           </View>
           <View className=" flex flex-row mt-2">
             <Text className="text-white w-12 " style={{fontFamily:'RobotoBold'}}>Time</Text>
-            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>35 min.</Text>
+            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>{data?.flight_time?.time}.</Text>
           </View>
           <View className=" flex flex-row mt-1">
             <Text className="text-white w-12" style={{fontFamily:'RobotoBold'}}>TMP</Text>
-            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>5°C</Text>
+            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>{data?.flight_time?.tempreature}</Text>
           </View>
         </View>
       </View>
@@ -114,7 +114,7 @@ const DroneDetails = ({ data }) => {
                 tintColor: "white",
               }}
             />
-            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>128GB/240GB</Text>
+            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>{data?.storage}/16GB</Text>
           </View>
         </View>
 

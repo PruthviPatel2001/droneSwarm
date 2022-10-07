@@ -1,6 +1,7 @@
 import { AppRegistry, LogBox, StyleSheet, Text, View } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
+import ProfileModal from "./screens/ProfileModal";
 import Tabs from "./navigation/Tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
@@ -30,6 +31,17 @@ export default function App() {
           component={Tabs}
           options={{ gestureEnabled: false }}
         />
+
+        <Stack.Screen
+          name="profilemodel"
+          component={ProfileModal}
+          options={{
+            presentation: "modal",
+            headerShown: false,
+          }}
+        />
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );

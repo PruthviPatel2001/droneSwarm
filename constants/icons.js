@@ -10,6 +10,9 @@ const wallclock = require("../assets/icons/wall-clock.png")
 const stopwatch = require("../assets/icons/stopwatch.png")
 const storage = require("../assets/icons/server-storage.png")
 const internet = require("../assets/icons/internet.png")
+const edit = require("../assets/icons/pencil.png")
+const toggle = require("../assets/icons/off-button.png")
+const logout = require("../assets/icons/logout.png")
 
 
 
@@ -26,5 +29,8 @@ export default {
     wallclock,
     stopwatch,
     storage,
-    internet
+    internet,
+    edit,
+    toggle,
+    logout
 }

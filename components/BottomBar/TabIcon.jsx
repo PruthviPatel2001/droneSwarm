@@ -19,7 +19,7 @@ const TabIcon = ({ focused, icon, label }) => {
       />
       <Text
         style={{
-          color: focused ? "#17233B" : "#FFFFFF",
+          color:  "#17233B" ,
         }}
         className="mt-1"
       >

@@ -2,11 +2,10 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import React from "react";
 
-const DroneList = ({ data, setSelectedDroneId }) => {
+const DroneList = ({ data, setSelectedDroneId ,styling}) => {
 
 
   const handlePress =(id) =>{
-    console.log(id);
     setSelectedDroneId(id)
   }
 
@@ -25,6 +24,9 @@ const DroneList = ({ data, setSelectedDroneId }) => {
           <View
             key={id}
             className="bg-[#F5F5F533] bg-opacity-20 p-4 ml-4 rounded-md"
+            style={{
+              ...styling
+            }}
           >
             <TouchableOpacity
              onPress={()=>handlePress(id)}

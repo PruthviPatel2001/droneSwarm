@@ -1,99 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, ScrollView, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import DroneDetails from "../components/HomeComp/DroneDetails";
 import DroneList from "../components/HomeComp/DroneList";
+import UserAvatar from "react-native-user-avatar";
+import drones from "../Data/DroneData";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
   const [SelectedDrone, setSelectedDrone] = useState();
   const [SelectedDroneId, setSelectedDroneId] = useState(1);
 
-  const drones = [
-    {
-      id: 1,
-      name: "Drone 1",
-      details: {
-        title: "DJI Mavic Air Drone ",
-        battery: "",
-        range: "",
-        flyingTimeLeft: "20 mins",
-        speed: "3200",
-      },
-      camera_details: {
-        vq: "1080p",
-        res: "1920*1080",
-      },
-      flight_time: {
-        time: "35 min",
-        tempreature: "5°C",
-      },
-      storage: "120gb",
-      connection_status: true,
-    },
-    {
-      id: 2,
-      name: "Drone 2",
-      details: {
-        title: "DJI Mavic Air Drone ",
-        battery: "",
-        range: "",
-        flyingTimeLeft: "20 mins",
-        speed: "3200",
-      },
-      camera_details: {
-        vq: "1080p",
-        res: "1920*1080",
-      },
-      flight_time: {
-        time: "35 min",
-        tempreature: "5°C",
-      },
-      storage: "120gb",
-      connection_status: true,
-    },
-    {
-      id: 3,
-      name: "Drone 3",
-      details: {
-        title: "DJI Mavic Air Drone ",
-        battery: "",
-        range: "",
-        flyingTimeLeft: "20 mins",
-        speed: "3200",
-      },
-      camera_details: {
-        vq: "1080p",
-        res: "1920*1080",
-      },
-      flight_time: {
-        time: "35 min",
-        tempreature: "5°C",
-      },
-      storage: "120gb",
-      connection_status: true,
-    },
-    {
-      id: 4,
-      name: "Drone 4",
-      details: {
-        title: "DJI Mavic Air Drone ",
-        battery: "",
-        range: "",
-        flyingTimeLeft: "20 mins",
-        speed: "3200",
-      },
-      camera_details: {
-        vq: "1080p",
-        res: "1920*1080",
-      },
-      flight_time: {
-        time: "35 min",
-        tempreature: "5°C",
-      },
-      storage: "120gb",
-      connection_status: true,
-    },
-  ];
+  const navigator = useNavigation();
+
+  const image =
+    "https://image.shutterstock.com/mosaic_250/2780032/1854697390/stock-photo-head-shot-young-attractive-businessman-in-glasses-standing-in-modern-office-pose-for-camera-1854697390.jpg";
+
 
   useEffect(() => {
     const filterData = drones.find((val) => val.id === SelectedDroneId);
@@ -117,7 +45,9 @@ const Home = () => {
             >
               StrandAID
             </Text>
-            <Text>Profie</Text>
+            <TouchableOpacity onPress={()=>navigator.navigate('profilemodel')}>
+              <UserAvatar size={40} name="Avishay Bar" src={image} />
+            </TouchableOpacity>
           </View>
           <View className="mt-4 p-4">
             <Text
