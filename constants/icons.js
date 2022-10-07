@@ -13,6 +13,10 @@ const internet = require("../assets/icons/internet.png")
 const edit = require("../assets/icons/pencil.png")
 const toggle = require("../assets/icons/off-button.png")
 const logout = require("../assets/icons/logout.png")
+const share = require("../assets/icons/share.png")
+const copy = require("../assets/icons/copy.png")
+const leftarrow = require("../assets/icons/left-arrow.png")
+
 
 
 
@@ -32,5 +36,8 @@ export default {
     internet,
     edit,
     toggle,
-    logout
+    logout,
+    share,
+    copy,
+    leftarrow
 }

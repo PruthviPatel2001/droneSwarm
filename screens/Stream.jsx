@@ -22,24 +22,22 @@ const Stream = () => {
 
     setLoader(true);
 
-    console.log("here")
 
     const filterData = drones.find((val) => val.id === SelectedDroneId);
 
     setViewImage(filterData.camera_details.current_View);
     setSelectedDrone(filterData);
-    console.log("here 2")
 
     ViewImage && setLoader(false);
   }, [SelectedDroneId]);
 
   return (
     <View className="flex-1">
-      {Loader ? (
-        <View style={{ flex: 1, justifyContent: "center" }}>
+     
+        {/* <View style={{ flex: 1, justifyContent: "center" }}>
           <ActivityIndicator size="large" color="#17233B" />
-        </View>
-      ) : (
+        </View> */}
+    
         <ImageBackground
           source={ViewImage}
           resizeMethod="cover"
@@ -58,7 +56,7 @@ const Stream = () => {
             />
           </View>
         </ImageBackground>
-      )}
+    
     </View>
   );
 };
