@@ -39,14 +39,6 @@ const ProfileModal = () => {
 
           <View className="flex flex-row justify-between border-solid border-b-2 border-gray-200">
             <Text className="text-xl">Dinesh Shah</Text>
-            <Image
-              source={icons.edit}
-              style={{
-                width: 20,
-                height: 20,
-              }}
-              resizeMode="contain"
-            />
           </View>
         </View>
 
@@ -61,14 +53,6 @@ const ProfileModal = () => {
           <Text className="text-sm text-gray-500 mt-5">Date of Birth</Text>
           <View className="flex flex-row justify-between border-solid border-b-2 border-gray-200">
             <Text className="text-xl">10.08.1983</Text>
-            <Image
-              source={icons.edit}
-              style={{
-                width: 20,
-                height: 20,
-              }}
-              resizeMode="contain"
-            />
           </View>
         </View>
 
@@ -85,14 +69,6 @@ const ProfileModal = () => {
           <Text className="text-sm text-gray-500 mt-4">Fast Login</Text>
           <View className="flex flex-row justify-between border-solid border-b-2 border-gray-200">
             <Text className="text-xl">Remember</Text>
-            <Image
-              source={icons.toggle}
-              style={{
-                width: 30,
-                height: 30,
-              }}
-              resizeMode="contain"
-            />
           </View>
         </View>
       </View>
@@ -102,7 +78,6 @@ const ProfileModal = () => {
           <TouchableOpacity className="bg-[#17233B] p-4 rounded-xl">
             <Text className="text-xl mr-2 text-white ">Logout</Text>
           </TouchableOpacity>
-       
         </View>
       </View>
     </SafeAreaView>
