@@ -27,7 +27,7 @@ const Home = () => {
 
   useEffect(() => {
     const getDroneData = async () => {
-      const res = await axios.get("https://comikstorm.pythonanywhere.com/all");
+      const res = await axios.get("https://strandaid.azurewebsites.net/all");
 
       res && setLoader(false);
       setDroneData(res.data);
@@ -40,7 +40,7 @@ const Home = () => {
     const getIndividualDrone = async () => {
       setLoader(true);
       const res = await axios.get(
-        `https://comikstorm.pythonanywhere.com/list?id=${SelectedDroneId}`
+        `https://strandaid.azurewebsites.net/list?id=${SelectedDroneId}`
       );
       res && setLoader(false);
 

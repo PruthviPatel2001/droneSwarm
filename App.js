@@ -20,6 +20,8 @@ export default function App() {
   }
   return (
     <NavigationContainer>
+      {LogBox.ignoreAllLogs()}
+
       <Stack.Navigator
         initialRouteName={"home "}
         screenOptions={{
