@@ -1,32 +1,53 @@
-import React, { useEffect, useState } from "react";
 import {
+  ActivityIndicator,
   SafeAreaView,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import React, { useEffect, useState } from "react";
 
 import DroneDetails from "../components/HomeComp/DroneDetails";
 import DroneList from "../components/HomeComp/DroneList";
 import UserAvatar from "react-native-user-avatar";
+import axios from "axios";
 import drones from "../Data/DroneData";
 import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
   const [SelectedDrone, setSelectedDrone] = useState();
   const [SelectedDroneId, setSelectedDroneId] = useState(1);
-
+  const [DroneData, setDroneData] = useState();
+  const [Loader, setLoader] = useState(true);
   const navigator = useNavigation();
 
   const image =
     "https://image.shutterstock.com/mosaic_250/2780032/1854697390/stock-photo-head-shot-young-attractive-businessman-in-glasses-standing-in-modern-office-pose-for-camera-1854697390.jpg";
 
+  useEffect(() => {
+    const getDroneData = async () => {
+      const res = await axios.get("https://comikstorm.pythonanywhere.com/all");
+
+      res && setLoader(false);
+      setDroneData(res.data);
+    };
+
+    getDroneData();
+  }, []);
 
   useEffect(() => {
-    const filterData = drones.find((val) => val.id === SelectedDroneId);
+    const getIndividualDrone = async () => {
+      setLoader(true);
+      const res = await axios.get(
+        `https://comikstorm.pythonanywhere.com/list?id=${SelectedDroneId}`
+      );
+      res && setLoader(false);
 
-    setSelectedDrone(filterData);
+      setSelectedDrone(res.data);
+    };
+
+    SelectedDroneId && getIndividualDrone();
   }, [SelectedDroneId]);
 
   return (
@@ -45,7 +66,9 @@ const Home = () => {
             >
               StrandAID
             </Text>
-            <TouchableOpacity onPress={()=>navigator.navigate('profilemodel')}>
+            <TouchableOpacity
+              onPress={() => navigator.navigate("profilemodel")}
+            >
               <UserAvatar size={40} name="Avishay Bar" src={image} />
             </TouchableOpacity>
           </View>
@@ -65,14 +88,25 @@ const Home = () => {
             Drones:
           </Text>
           <View>
-            <DroneList setSelectedDroneId={setSelectedDroneId} data={drones} />
-            <Text
-              className="text-white text-base mt-2 p-4 pb-0"
-              style={{ fontFamily: "RobotoBlack" }}
-            >
-              Deatils of drone: {SelectedDroneId}
-            </Text>
-            <DroneDetails data={SelectedDrone} />
+            {Loader ? (
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <ActivityIndicator className="mt-5" size="large" />
+              </View>
+            ) : (
+              <>
+                <DroneList
+                  setSelectedDroneId={setSelectedDroneId}
+                  data={DroneData}
+                />
+                <Text
+                  className="text-white text-base mt-2 p-4 pb-0"
+                  style={{ fontFamily: "RobotoBlack" }}
+                >
+                  Deatils of drone: {SelectedDroneId}
+                </Text>
+                <DroneDetails data={SelectedDrone} />
+              </>
+            )}
           </View>
         </ScrollView>
       </SafeAreaView>

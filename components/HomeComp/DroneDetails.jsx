@@ -93,11 +93,11 @@ const DroneDetails = ({ data }) => {
           </View>
           <View className=" flex flex-row mt-2">
             <Text className="text-white w-12 " style={{fontFamily:'RobotoBold'}}>Time</Text>
-            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>{data?.flight_time?.time}.</Text>
+            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>{data?.flight?.time}min.</Text>
           </View>
           <View className=" flex flex-row mt-1">
             <Text className="text-white w-12" style={{fontFamily:'RobotoBold'}}>TMP</Text>
-            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>{data?.flight_time?.tempreature}</Text>
+            <Text className="text-white ml-4 " style={{fontFamily:'RobotoBold'}}>{data?.flight?.temperature}°C</Text>
           </View>
         </View>
       </View>
@@ -114,7 +114,7 @@ const DroneDetails = ({ data }) => {
                 tintColor: "white",
               }}
             />
-            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>{data?.storage}/16GB</Text>
+            <Text className="text-white ml-4" style={{fontFamily:'RobotoBold'}}>{data?.storage}GB/16GB</Text>
           </View>
         </View>
 

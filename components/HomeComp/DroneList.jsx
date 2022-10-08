@@ -9,6 +9,11 @@ const DroneList = ({ data, setSelectedDroneId ,styling}) => {
     setSelectedDroneId(id)
   }
 
+
+  
+
+
+
   return (
     <ScrollView
       horizontal
@@ -17,25 +22,25 @@ const DroneList = ({ data, setSelectedDroneId ,styling}) => {
         paddingTop: 10,
       }}
     >
-      {data.map((val) => {
-        const { id, name } = val;
+      {data?.map((val) => {
+        const { drone_id, drone_name } = val;
 
         return (
           <View
-            key={id}
+            key={drone_id}
             className="bg-[#F5F5F533] bg-opacity-20 p-4 ml-4 rounded-md"
             style={{
               ...styling
             }}
           >
             <TouchableOpacity
-             onPress={()=>handlePress(id)}
+             onPress={()=>handlePress(drone_id)}
             >
               <Text
                 className="text-white text-base"
                 style={{ fontFamily: "RobotoBold" }}
               >
-                {name}
+                {drone_name}
               </Text>
             </TouchableOpacity>
           </View>
