@@ -1,5 +1,6 @@
 import { AppRegistry, LogBox, StyleSheet, Text, View } from "react-native";
 
+import Login from "./screens/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import ProfileModal from "./screens/ProfileModal";
 import Tabs from "./navigation/Tabs";
@@ -23,15 +24,21 @@ export default function App() {
       {LogBox.ignoreAllLogs()}
 
       <Stack.Navigator
-        initialRouteName={"home "}
+        initialRouteName={"login"}
         screenOptions={{
           headerShown: false,
         }}
       >
         <Stack.Screen
+          name="login"
+          component={Login}
+          options={{ headerShown:false}}
+        />
+
+        <Stack.Screen
           name="home"
           component={Tabs}
-          options={{ gestureEnabled: false }}
+          options={{  }}
         />
 
         <Stack.Screen
@@ -42,8 +49,6 @@ export default function App() {
             headerShown: false,
           }}
         />
-
-
       </Stack.Navigator>
     </NavigationContainer>
   );
