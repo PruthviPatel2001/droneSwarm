@@ -44,7 +44,7 @@ const Tabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return <TabIcon focused={focused} icon={icons.stream} label="Stream" />;
-          },
+          }, animationEnabled: false
         }}
       />
       <Tab.Screen
@@ -62,7 +62,7 @@ const Tabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return <TabIcon focused={focused} icon={icons.profile} label="Profile" />;
-          },
+          }
         }}
       />
     </Tab.Navigator>

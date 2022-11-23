@@ -1,4 +1,14 @@
-import { ActivityIndicator, Image, SafeAreaView, ScrollView, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View
+} from "react-native";
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
@@ -13,7 +23,7 @@ const Records = () => {
   useEffect(() => {
     const getRecords = async () => {
       const res = await axios.get(
-        "https://strandaid.azurewebsites.net//drone_record"
+        "https:/strandaid.azurewebsites.net/drone_record"
       );
 
       console.log("Records", res.data);
@@ -25,7 +35,7 @@ const Records = () => {
 
   return (
     <View className=" bg-[#17233B] flex-1">
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
         <View className="flex justify-between flex-row p-4">
           <Text
             className="text-white text-3xl"
@@ -137,3 +147,9 @@ const Records = () => {
 };
 
 export default Records;
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+  }
+})

@@ -1,7 +1,7 @@
 import { AVPlaybackStatus, Video } from "expo-av";
 import {
   ActivityIndicator,
-  ImageBackground,
+  ImageBackground, Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -85,12 +85,17 @@ const Stream = () => {
           </View>
         ) : (
           <>
-            <WebView
-              source={{
-                html: '<iframe  width="100%" height="50%" src="https://ca44-2405-205-c8ed-4e32-b836-6d2e-1437-2501.in.ngrok.io/video" frameborder="0" allow="autoplay; encrypted-media" ></iframe>',
-              }}
-              className="mt-24 bg-white"
-            />
+
+               <Text style={styles.andView}>Work In Progress</Text>
+                  <WebView
+                  source={{
+                    html: '<iframe  width="100%" height="50%" src="https://0885-2401-4900-50aa-6a99-55c7-2b3a-2a8b-fb5c.in.ngrok.io" frameborder="0" allow="autoplay; encrypted-media" ></iframe>',
+                  }}
+                  className="mt-24 bg-white"
+                  style={styles.andView}
+                  androidHardwareAccelerationDisabled
+                  />
+
           </>
         )}
       </View>
@@ -113,5 +118,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  andView:{
+     display: Platform.OS === 'ios' ?"block":"inline"
+  },
+  iosView:{
+    display:Platform.OS==='android'?"block":"inline"
+  }
 });
 export default Stream;

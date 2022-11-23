@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  StyleSheet, Platform, StatusBar
 } from "react-native";
 import React, { useEffect, useState } from "react";
 
@@ -52,7 +53,7 @@ const Home = () => {
 
   return (
     <View className=" bg-[#17233B] flex-1">
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
         <ScrollView
           contentContainerStyle={{
             paddingBottom: 20,
@@ -115,3 +116,9 @@ const Home = () => {
 };
 
 export default Home;
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+  }
+})
