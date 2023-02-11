@@ -15,6 +15,7 @@ import UserAvatar from "react-native-user-avatar";
 import axios from "axios";
 import drones from "../Data/DroneData";
 import { useNavigation } from "@react-navigation/native";
+import { API } from "../constants/apiUrl";
 
 const Home = () => {
   const [SelectedDrone, setSelectedDrone] = useState();
@@ -28,7 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     const getDroneData = async () => {
-      const res = await axios.get("https://strandaid.azurewebsites.net/all");
+      const res = await axios.get(`${API}/all`);
 
       res && setLoader(false);
       setDroneData(res.data);
@@ -41,7 +42,7 @@ const Home = () => {
     const getIndividualDrone = async () => {
       setLoader(true);
       const res = await axios.get(
-        `https://strandaid.azurewebsites.net/list?id=${SelectedDroneId}`
+        `${API}/list?id=${SelectedDroneId}`
       );
       res && setLoader(false);
 

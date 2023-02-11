@@ -58,7 +58,7 @@ const Login = () => {
                   values
                 );
                 console.log(res);
-                res && navigator.navigate("home");
+                 res && navigator.navigate("home");
               } catch (err) {
                 console.log(err);
               }

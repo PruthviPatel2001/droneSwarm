@@ -45,7 +45,7 @@ const Stream = () => {
 
   useEffect(() => {
     const getDroneData = async () => {
-      const res = await axios.get("https://comikstorm.pythonanywhere.com/all");
+      const res = await axios.get("https://strandaidapi.azurewebsites.net/all");
 
 
       setDroneData(res.data);
@@ -89,7 +89,7 @@ const Stream = () => {
                <Text style={styles.andView}>Work In Progress</Text>
                   <WebView
                   source={{
-                    html: '<iframe  width="100%" height="50%" src="https://0885-2401-4900-50aa-6a99-55c7-2b3a-2a8b-fb5c.in.ngrok.io" frameborder="0" allow="autoplay; encrypted-media" ></iframe>',
+                    html: '<iframe  width="100%" height="50%" src="http://192.168.203.4:5000/video" frameborder="0" allow="autoplay; encrypted-media" ></iframe>',
                   }}
                   className="mt-24 bg-white"
                   style={styles.andView}

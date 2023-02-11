@@ -23,7 +23,7 @@ const Records = () => {
   useEffect(() => {
     const getRecords = async () => {
       const res = await axios.get(
-        "https:/strandaid.azurewebsites.net/drone_record"
+        "https://strandaidapi.azurewebsites.net/drone_record"
       );
 
       console.log("Records", res.data);
@@ -32,6 +32,8 @@ const Records = () => {
     };
     getRecords();
   }, []);
+
+  console.log(ResponeData);
 
   return (
     <View className=" bg-[#17233B] flex-1">
